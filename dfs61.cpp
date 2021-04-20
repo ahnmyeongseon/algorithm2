@@ -25,7 +25,7 @@ int main(){
     }
     dfs(1, 0);
 
-    cout<<cnt;
+    cout<<cnt<<"";
 
     return 0;
 }
