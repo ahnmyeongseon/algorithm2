@@ -4,28 +4,32 @@
 
 using namespace std;
 // 전위순회 루트 -> 왼 -> 오
-// 1,2,3,4,5,6
-int a;
+int a, total=0;
 int pr[11];
-void dfs(int b){
+bool flag = 0;
 
+void dfs(int b, int sum_0){ //b는 원소갯수만큼 증가 b+1일때 종료
+    if(flag == 1) return;
     if(b==a+1){
-        for(int i=1; i<=a; i++){
-            if(pr[i]==1) {
-                cout << i << " ";}
-
+        if(sum_0 == total-sum_0) {
+            flag = 1;
         }
-        puts(" ");
     }
     else{
-        pr[b] = 1;
-        dfs(b+1);
-        pr[b] = 0;
-        dfs(b+1);
+        dfs(b+1, sum_0+pr[b]);
+        dfs(b+1, sum_0);
     }
-
 }
+
 int main(){
     cin>>a;
-    dfs(1);
+
+    for(int i=1; i<=a; i++){
+        cin>>pr[i];
+        total += pr[i];
+    }
+    dfs(1, 0);
+
+    if(flag == 1) cout<<"YES";
+    else cout<<"NO";
 }
