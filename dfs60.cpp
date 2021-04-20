@@ -21,7 +21,7 @@ void dfs(int b, int sum_0){ //b는 원소갯수만큼 증가 b+1일때 종료
     }
 }
 
-int main1(){
+int main(){
     cin>>a;
 
     for(int i=1; i<=a; i++){
