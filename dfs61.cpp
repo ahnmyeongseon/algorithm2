@@ -15,6 +15,7 @@ void dfs(int a, int sum){
             for(int i=1; i<=n; i++){
                 cout<<lt[i]<<" ";
             }}
+
         return;
     }
     else{

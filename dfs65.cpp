@@ -34,7 +34,7 @@ int main(){
             cin>>map[i][j];
         }
     }
-    ch[1][1] = 0;
+    //ch[1][1] = 0;
     dfs(1,1);
     cout<<cnt;
 }
